@@ -1,6 +1,7 @@
 import { cva } from 'class-variance-authority'
 import { twMerge } from 'tailwind-merge';
 import { clsx } from 'clsx';
+import { useAuthProvider } from '../store/AuthStore';
 
 const variants = cva([
   'p-4',
@@ -21,12 +22,12 @@ const variants = cva([
 });
 
 function Button_3({ state, onClick, children, ...props }) {
-  const usuarioRegistrado = true;
+  const { auth } = useAuthProvider();
 
   return (
     <button onClick={onClick} className={twMerge(variants({ state }), clsx({
-      'text-red-500': !usuarioRegistrado,
-      'text-white': usuarioRegistrado
+      'text-red-500': !auth,
+      'text-white': auth
     }))} {...props}>
       {children}
     </button>
