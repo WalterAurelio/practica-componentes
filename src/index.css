@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
 body {
-  background-color: grey;
+  background-color: white;
+}
+
+@theme {
+  --color-menta-600: #00AB01;
+  --color-menta-200: #89FF89;
+  --color-gris-placeholder: #858585;
+  --color-gris-border: #CECECE;
+  --color-negro-principal: #3F4041;
+  --color-crimson-red: #dc143c;
+
 }
